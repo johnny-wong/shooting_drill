@@ -23,13 +23,13 @@ def simulate_drill(lower = -5, upper = 7, perc = 0.7):
 
 	return result, shots
 
-'''
+
 def simulate_drills(n = 1, lower = -5, upper = 7, perc = 0.7):
-	perc = np.array(list(perc)) #TODO 
-	num_won = list(range(perc))
-	for i in range(len(perc)):
-		for j in range(n):
-			num_won[i] += simulate_drill(perc = perc[i])
+	num_won = 0
+	total_shots_taken = 0
+	for j in range(n):
+		result, shots_taken = simulate_drill(lower, upper, perc)
+		num_won += result
+		total_shots_taken += shots_taken
 		
-	return num_won
-'''
+	return num_won, total_shots_taken
