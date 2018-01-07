@@ -17,3 +17,12 @@ simulate_drill <- function(lower = -5, upper = 7, perc = 0.75){
 }
 
 #TODO make perc a vector so you can output the vector of results with diff shooting percentages
+
+
+simulate_drills <- function(n = 1, lower = -5, upper = 7, perc = 0.75){
+  num_won <- 0
+  for (i in 1:n){
+    num_won <- num_won + simulate_drill(lower, upper, perc)
+  }
+  return(num_won)
+}
